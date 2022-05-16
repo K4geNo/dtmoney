@@ -1,8 +1,16 @@
 import { useTransactions } from '../../hooks/useTransactions'
 import { Container } from './styles'
+import { FaTrashAlt } from 'react-icons/fa'
 
 export function TransactionsTable() {
-    const { transactions } = useTransactions()
+    const { transactions, setTransactions } = useTransactions()
+
+    function handleRemoveTransaction(id: number) {
+        const updateTransaction = transactions.filter(
+            (transaction) => transaction.id !== id
+        )
+        setTransactions(updateTransaction)
+    }
 
     return (
         <Container>
@@ -31,6 +39,17 @@ export function TransactionsTable() {
                                 {new Intl.DateTimeFormat('pt-BR').format(
                                     new Date(transaction.createdAt)
                                 )}
+                            </td>
+
+                            <td>
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        handleRemoveTransaction(transaction.id)
+                                    }
+                                >
+                                    <FaTrashAlt size={16} />
+                                </button>
                             </td>
                         </tr>
                     ))}

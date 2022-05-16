@@ -20,6 +20,7 @@ export function App() {
     function handleCloseNewTransactionModal() {
         setIsNewTransactionModalOpen(false)
     }
+
     return (
         <TransactionsProvider>
             <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />

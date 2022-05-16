@@ -24,6 +24,7 @@ interface TransactionsProviderProps {
 
 interface TransactionsContextData {
     transactions: Transaction[]
+    setTransactions: (transactions: Transaction[]) => void
     createTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
@@ -52,7 +53,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
     return (
         <TransactionsContext.Provider
-            value={{ transactions, createTransaction }}
+            value={{ transactions, createTransaction, setTransactions }}
         >
             {children}
         </TransactionsContext.Provider>
