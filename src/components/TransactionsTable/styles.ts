@@ -8,7 +8,7 @@ export const Container = styled.div`
         border-spacing: 0 0.5rem;
 
         th {
-            color: var(--text-body);
+            color: white;
             font-weight: 400;
             padding: 1rem 2rem;
             text-align: left;
@@ -18,26 +18,27 @@ export const Container = styled.div`
         td {
             padding: 1rem 2rem;
             border: 0;
-            background: var(--shape);
+            background: rgb(32, 32, 36);
             font-weight: 400;
-            color: var(--text-body);
+            color: white;
             border-radius: 0.25rem;
 
             &:first-child {
-                color: var(--text-title);
+                color: white;
             }
 
             &.deposit {
-                color: var(--green);
+                color: green;
             }
 
             &.withdraw {
-                color: var(--red);
+                color: red;
             }
 
             button {
                 background: none;
                 border: none;
+                color: white;
             }
         }
     }

@@ -3,7 +3,7 @@ import { darken, transparentize } from 'polished'
 
 export const Container = styled.form`
     h2 {
-        color: var(--text-title);
+        color: white;
         font-size: 1.5rem;
         margin-bottom: 2rem;
     }
@@ -15,13 +15,14 @@ export const Container = styled.form`
 
         border-radius: 0.25rem;
         border: 1px solid #d7d7d7;
-        background: #e7e9ee;
+        background: rgb(32, 32, 36);
+        color: white;
 
         font-weight: 400;
         font-size: 1rem;
 
         &::placeholder {
-            color: var(--text-body);
+            color: white;
         }
 
         & + input {
@@ -73,7 +74,7 @@ export const RadioBox = styled.button<RadioBoxProps>`
 
     background: ${(props) =>
         props.isActive
-            ? transparentize(0.9, colors[props.activeColor])
+            ? transparentize(0.5, colors[props.activeColor])
             : 'transparent'};
 
     display: flex;
@@ -83,7 +84,7 @@ export const RadioBox = styled.button<RadioBoxProps>`
     transition: border-color 0.2s;
 
     &:hover {
-        border-color: ${darken(0.1, '#d7d7d7')};
+        border-color: ${darken(0.1, '#fff')};
     }
 
     img {
@@ -95,6 +96,6 @@ export const RadioBox = styled.button<RadioBoxProps>`
         display: inline-block;
         margin-left: 1rem;
         font-size: 1rem;
-        color: var(--text-title);
+        color: white;
     }
 `
